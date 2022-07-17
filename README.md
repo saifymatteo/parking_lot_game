@@ -1,12 +1,14 @@
 # Parking Lot Game Challenge
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/93c33604-1ab4-40b2-9e3e-6339ea277ab8/deploy-status)](https://app.netlify.com/sites/parking-lot-game-saifymatteo/deploys)
+
 ![Parking Lot Game](https://raw.githubusercontent.com/saifymatteo/parking_lot_game/master/github/assets/main.jpg)
 
 A simple game for imaginary parking lot. Challenge comes from [Mihail Gaberov](https://www.freecodecamp.org/news/parking-lot-challenge-solved-in-javascript/).
 
 ## Downloads
 
-You can download it from [release tab](https://github.com/saifymatteo/parking_lot_game/releases)
+You can try the [web version](https://parking-lot-game-saifymatteo.netlify.app/) of the game or just download it from [release tab](https://github.com/saifymatteo/parking_lot_game/releases)
 
 ## Technology
 
