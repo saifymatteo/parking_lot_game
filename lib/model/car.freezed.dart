@@ -16,8 +16,7 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$Car {
-  String get model => throw _privateConstructorUsedError;
-
+  String get brand => throw _privateConstructorUsedError;
   String get plate => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -28,8 +27,7 @@ mixin _$Car {
 abstract class $CarCopyWith<$Res> {
   factory $CarCopyWith(Car value, $Res Function(Car) then) =
       _$CarCopyWithImpl<$Res>;
-
-  $Res call({String model, String plate});
+  $Res call({String brand, String plate});
 }
 
 /// @nodoc
@@ -37,19 +35,18 @@ class _$CarCopyWithImpl<$Res> implements $CarCopyWith<$Res> {
   _$CarCopyWithImpl(this._value, this._then);
 
   final Car _value;
-
   // ignore: unused_field
   final $Res Function(Car) _then;
 
   @override
   $Res call({
-    Object? model = freezed,
+    Object? brand = freezed,
     Object? plate = freezed,
   }) {
     return _then(_value.copyWith(
-      model: model == freezed
-          ? _value.model
-          : model // ignore: cast_nullable_to_non_nullable
+      brand: brand == freezed
+          ? _value.brand
+          : brand // ignore: cast_nullable_to_non_nullable
               as String,
       plate: plate == freezed
           ? _value.plate
@@ -63,9 +60,8 @@ class _$CarCopyWithImpl<$Res> implements $CarCopyWith<$Res> {
 abstract class _$$_CarCopyWith<$Res> implements $CarCopyWith<$Res> {
   factory _$$_CarCopyWith(_$_Car value, $Res Function(_$_Car) then) =
       __$$_CarCopyWithImpl<$Res>;
-
   @override
-  $Res call({String model, String plate});
+  $Res call({String brand, String plate});
 }
 
 /// @nodoc
@@ -79,13 +75,13 @@ class __$$_CarCopyWithImpl<$Res> extends _$CarCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? model = freezed,
+    Object? brand = freezed,
     Object? plate = freezed,
   }) {
     return _then(_$_Car(
-      model: model == freezed
-          ? _value.model
-          : model // ignore: cast_nullable_to_non_nullable
+      brand: brand == freezed
+          ? _value.brand
+          : brand // ignore: cast_nullable_to_non_nullable
               as String,
       plate: plate == freezed
           ? _value.plate
@@ -98,16 +94,16 @@ class __$$_CarCopyWithImpl<$Res> extends _$CarCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_Car implements _Car {
-  const _$_Car({required this.model, required this.plate});
+  _$_Car({required this.brand, required this.plate});
 
   @override
-  final String model;
+  final String brand;
   @override
   final String plate;
 
   @override
   String toString() {
-    return 'Car(model: $model, plate: $plate)';
+    return 'Car(brand: $brand, plate: $plate)';
   }
 
   @override
@@ -115,14 +111,14 @@ class _$_Car implements _Car {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_Car &&
-            const DeepCollectionEquality().equals(other.model, model) &&
+            const DeepCollectionEquality().equals(other.brand, brand) &&
             const DeepCollectionEquality().equals(other.plate, plate));
   }
 
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(model),
+      const DeepCollectionEquality().hash(brand),
       const DeepCollectionEquality().hash(plate));
 
   @JsonKey(ignore: true)
@@ -132,15 +128,13 @@ class _$_Car implements _Car {
 }
 
 abstract class _Car implements Car {
-  const factory _Car(
-      {required final String model, required final String plate}) = _$_Car;
+  factory _Car({required final String brand, required final String plate}) =
+      _$_Car;
 
   @override
-  String get model => throw _privateConstructorUsedError;
-
+  String get brand => throw _privateConstructorUsedError;
   @override
   String get plate => throw _privateConstructorUsedError;
-
   @override
   @JsonKey(ignore: true)
   _$$_CarCopyWith<_$_Car> get copyWith => throw _privateConstructorUsedError;
