@@ -4,7 +4,9 @@
 
 ![Parking Lot Game](https://raw.githubusercontent.com/saifymatteo/parking_lot_game/master/github/assets/main.jpg)
 
-A simple game for imaginary parking lot. Challenge comes from [Mihail Gaberov](https://www.freecodecamp.org/news/parking-lot-challenge-solved-in-javascript/).
+A simple game for imaginary parking lot. Enter your desired parking size and click away to fill it up! 
+
+This game was originally a challenge to build a simple game by [Mihail Gaberov](https://www.freecodecamp.org/news/parking-lot-challenge-solved-in-javascript/).
 
 ## Downloads
 
