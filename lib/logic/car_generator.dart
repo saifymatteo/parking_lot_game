@@ -21,46 +21,26 @@ enum CarBrand {
   jeep;
 
   String getString() {
-    switch (this) {
-      case nissan:
-        return 'Nissan';
-      case tesla:
-        return 'Tesla';
-      case toyota:
-        return 'Toyota';
-      case mitsubushi:
-        return 'Mitsubushi';
-      case honda:
-        return 'Honda';
-      case mercedes:
-        return 'Mercedes';
-      case subaru:
-        return 'Subaru';
-      case proton:
-        return 'Proton';
-      case perodua:
-        return 'Perodua';
-      case hyundai:
-        return 'Hyundai';
-      case ford:
-        return 'Ford';
-      case bmw:
-        return 'BMW';
-      case lexus:
-        return 'Lexus';
-      case chevrolet:
-        return 'Chevrolet';
-      case dodge:
-        return 'Dodge';
-      case volkswagen:
-        return 'Volkswagen';
-      case kia:
-        return 'Kia';
-      case jeep:
-        return 'Jeep';
-      default:
-        throw UnimplementedError();
-    }
+    return switch (this) {
+      nissan => 'Nissan',
+      tesla => 'Tesla',
+      toyota => 'Toyota',
+      mitsubushi => 'Mitsubushi',
+      honda => 'Honda',
+      mercedes => 'Mercedes',
+      subaru => 'Subaru',
+      proton => 'Proton',
+      perodua => 'Perodua',
+      hyundai => 'Hyundai',
+      ford => 'Ford',
+      bmw => 'BMW',
+      lexus => 'Lexus',
+      chevrolet => 'Chevrolet',
+      dodge => 'Dodge',
+      volkswagen => 'Volkswagen',
+      kia => 'Kia',
+      jeep => 'Jeep'
+    };
   }
 }
 

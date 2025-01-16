@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 
 class TitleMain extends StatelessWidget {
-  const TitleMain({
-    Key? key,
-  }) : super(key: key);
+  const TitleMain({super.key});
 
   @override
   Widget build(BuildContext context) {

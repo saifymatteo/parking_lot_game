@@ -6,7 +6,7 @@ import '../logic/logic.dart';
 import '../model/car.dart';
 
 class GameLayout extends StatelessWidget {
-  const GameLayout({Key? key, required this.constraints}) : super(key: key);
+  const GameLayout({super.key, required this.constraints});
 
   final BoxConstraints constraints;
 
@@ -17,7 +17,7 @@ class GameLayout extends StatelessWidget {
 
     return Consumer<ParkingLot>(
       builder: (_, provider, __) {
-        final countPotrait = constraints.maxWidth ~/ tileWidth;
+        final countPortrait = constraints.maxWidth ~/ tileWidth;
         final countHorizontal = constraints.maxHeight ~/ tileWidth;
 
         return Padding(
@@ -27,7 +27,7 @@ class GameLayout extends StatelessWidget {
             shrinkWrap: true,
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount:
-                  constraints.maxWidth > 600 ? countHorizontal : countPotrait,
+                  constraints.maxWidth > 600 ? countHorizontal : countPortrait,
               mainAxisSpacing: 10,
               crossAxisSpacing: 10,
               childAspectRatio: tileWidth / tileHeight,
@@ -37,7 +37,7 @@ class GameLayout extends StatelessWidget {
               final car = provider.getSlots[index];
               index += 1;
               return InkWell(
-                onTap: () => _onTapPark(context, car),
+                onTap: car != null ? () => _onTapPark(context, car) : null,
                 splashColor: Colors.lightBlue,
                 child: Card(
                   color: car != null ? Colors.red : Colors.green,
@@ -58,12 +58,10 @@ class GameLayout extends StatelessWidget {
     );
   }
 
-  void _onTapPark(BuildContext context, Car? car) {
+  void _onTapPark(BuildContext context, Car car) {
     final provider = context.read<ParkingLot>();
-    if (car != null) {
-      if (provider.remove(car)) {
-        showSnackBar(context, 'Successfully removed a car');
-      }
+    if (provider.remove(car)) {
+      showSnackBar(context, 'Successfully removed a car');
     }
   }
 }

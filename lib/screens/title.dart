@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../components/components.dart';
 
 class PageTitle extends StatefulWidget {
-  const PageTitle({Key? key}) : super(key: key);
+  const PageTitle({super.key});
 
   @override
   State<PageTitle> createState() => _PageTitleState();

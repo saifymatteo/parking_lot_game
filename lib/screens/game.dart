@@ -2,14 +2,9 @@ import 'package:flutter/material.dart';
 
 import '../components/components.dart';
 
-class PageGame extends StatefulWidget {
-  const PageGame({Key? key}) : super(key: key);
+class PageGame extends StatelessWidget {
+  const PageGame({super.key});
 
-  @override
-  State<PageGame> createState() => _PageGameState();
-}
-
-class _PageGameState extends State<PageGame> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

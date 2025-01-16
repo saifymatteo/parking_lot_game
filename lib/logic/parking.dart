@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 
 import '../model/car.dart';
@@ -16,17 +18,17 @@ class ParkingLot extends ChangeNotifier {
       return false;
     }
 
-    for (int i = 0; i <= _slots.length; i++) {
-      final slot = _slots[i];
+    final rngIndex = Random().nextInt(_slots.length);
 
-      if (slot == null) {
-        _slots[i] = car;
-        notifyListeners();
-        return true;
-      }
+    final slot = _slots[rngIndex];
+
+    if (slot == null) {
+      _slots[rngIndex] = car;
+      notifyListeners();
+      return true;
     }
 
-    return false;
+    return park(car);
   }
 
   bool remove(Car car) {

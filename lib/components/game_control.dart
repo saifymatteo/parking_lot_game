@@ -5,7 +5,7 @@ import 'package:parking_lot_game/model/car.dart';
 import 'package:provider/provider.dart';
 
 class GameControl extends StatelessWidget {
-  const GameControl({Key? key}) : super(key: key);
+  const GameControl({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -57,7 +57,8 @@ class GameControl extends StatelessWidget {
                       !provider.isFull ? _onPressPark(context) : null,
                   style: ElevatedButton.styleFrom(
                     fixedSize: Size(MediaQuery.of(context).size.width, 50),
-                    primary: provider.isFull ? Colors.red : Colors.green,
+                    backgroundColor:
+                        provider.isFull ? Colors.red : Colors.green,
                   ),
                   child: const Text(
                     'PARK!',

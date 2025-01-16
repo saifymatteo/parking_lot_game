@@ -9,9 +9,9 @@ import '../screens/screens.dart';
 
 class TitleButton extends StatefulWidget {
   const TitleButton({
-    Key? key,
+    super.key,
     required this.textEditingController,
-  }) : super(key: key);
+  });
 
   final TextEditingController textEditingController;
 
@@ -36,6 +36,8 @@ class _TitleButtonState extends State<TitleButton> {
     super.dispose();
   }
 
+  final _maxParking = 100;
+
   @override
   Widget build(BuildContext context) {
     return Flexible(
@@ -56,9 +58,22 @@ class _TitleButtonState extends State<TitleButton> {
                 controller: widget.textEditingController,
                 textInputAction: TextInputAction.done,
                 keyboardType: TextInputType.number,
-                inputFormatters: [FilteringTextInputFormatter.digitsOnly],
+                inputFormatters: [
+                  FilteringTextInputFormatter.digitsOnly,
+                  TextInputFormatter.withFunction(
+                    (oldValue, newValue) {
+                      final current = int.tryParse(newValue.text);
+
+                      if (current != null && current > _maxParking) {
+                        return oldValue;
+                      }
+
+                      return newValue;
+                    },
+                  ),
+                ],
                 textAlign: TextAlign.center,
-                decoration: const InputDecoration(
+                decoration: InputDecoration(
                   contentPadding: EdgeInsets.all(0),
                   fillColor: Colors.white,
                   filled: true,
@@ -66,7 +81,7 @@ class _TitleButtonState extends State<TitleButton> {
                     borderSide: BorderSide.none,
                     borderRadius: BorderRadius.all(Radius.circular(10)),
                   ),
-                  hintText: 'Enter desired number from 1-20',
+                  hintText: 'Enter desired number from 1-$_maxParking',
                 ),
                 onSubmitted: (_) => _onSubmitSlots(
                   widget.textEditingController.text,
@@ -82,7 +97,7 @@ class _TitleButtonState extends State<TitleButton> {
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10),
                 ),
-                primary: Colors.green,
+                backgroundColor: Colors.green,
               ),
               child: const Text(
                 'Pressed to Start',
@@ -100,8 +115,8 @@ class _TitleButtonState extends State<TitleButton> {
       showSnackBar(context, 'Please enter a number');
     } else if (int.tryParse(input) == null) {
       showSnackBar(context, 'Please enter a valid number');
-    } else if (int.parse(input) > 20) {
-      showSnackBar(context, 'Please enter a number range from 1-20');
+    } else if (int.parse(input) > _maxParking) {
+      showSnackBar(context, 'Please enter a number range from 1-$_maxParking');
     } else {
       final provider = context.read<ParkingLot>();
       provider.setSlots = int.parse(input);
