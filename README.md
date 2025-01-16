@@ -4,7 +4,7 @@
 
 ![Parking Lot Game](https://raw.githubusercontent.com/saifymatteo/parking_lot_game/master/github/assets/main.jpg)
 
-A simple game for imaginary parking lot. Enter your desired parking size and click away to fill it up! 
+A simple game for imaginary parking lot. Enter your desired parking size and click away to fill it up!
 
 This game was originally a challenge to build a simple game by [Mihail Gaberov](https://www.freecodecamp.org/news/parking-lot-challenge-solved-in-javascript/).
 
@@ -12,9 +12,9 @@ This game was originally a challenge to build a simple game by [Mihail Gaberov](
 
 ## Downloads
 
-You can try the [web version](https://parking-lot-game-saifymatteo.netlify.app/) of the game or just download it from [release tab](https://github.com/saifymatteo/parking_lot_game/releases)
+You can try the [web version](https://parking-lot-game-saifymatteo.netlify.app/) of the game or just download it from [release tab](https://github.com/saifymatteo/parking_lot_game/releases/latest)
 
 ## Technology
 
-- Flutter: `3.0.3`
-- Dart: `2.17.5`
+- Flutter: `3.27.2`
+- Dart: `3.6.1`

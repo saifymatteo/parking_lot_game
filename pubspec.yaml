@@ -3,13 +3,14 @@ name: parking_lot_game
 description: A simple game to manage an imaginary parking lot.
 
 publish_to: none
-version: 1.0.1+1
+version: 1.0.2+2
 
 environment:
   sdk: '>=3.6.1 <4.0.0'
 
 dependency_overrides:
   file: 7.0.1
+  path_provider: 2.1.5
 
 dependencies:
   flutter:
