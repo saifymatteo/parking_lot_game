@@ -1,9 +1,8 @@
----
 name: parking_lot_game
 description: A simple game to manage an imaginary parking lot.
 
 publish_to: none
-version: 1.0.2+2
+version: 1.0.3+3
 
 environment:
   sdk: '>=3.6.1 <4.0.0'
