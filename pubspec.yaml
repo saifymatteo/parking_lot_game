@@ -2,36 +2,25 @@ name: parking_lot_game
 description: A simple game to manage an imaginary parking lot.
 
 publish_to: none
-version: 1.0.3+3
+version: 1.1.0+1
 
 environment:
   sdk: '>=3.6.1 <4.0.0'
 
-dependency_overrides:
-  file: 7.0.1
-  path_provider: 2.1.5
-
 dependencies:
+  cupertino_icons: ^1.0.8
   flutter:
     sdk: flutter
-  freezed_annotation: ^2.4.4
+  freezed_annotation: ^3.1.0
   google_fonts: ^6.2.1
   provider: ^6.1.2
 
 dev_dependencies:
   build_runner: ^2.4.14
-  flutter_lints: ^5.0.0
+  flutter_lints: ^6.0.0
   flutter_test:
     sdk: flutter
-  freezed: ^2.5.8
+  freezed: ^3.2.0
 
 flutter:
   uses-material-design: true
-  # assets:
-  #   - images/a_dot_burr.jpeg
-  # fonts:
-  #   - family: Schyler
-  #     fonts:
-  #       - asset: fonts/Schyler-Regular.ttf
-  #       - asset: fonts/Schyler-Italic.ttf
-  #         style: italic

@@ -1,7 +1,7 @@
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'car.dart';
 
@@ -9,133 +9,298 @@ part of 'car.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$Car {
-  String get brand => throw _privateConstructorUsedError;
-  String get plate => throw _privateConstructorUsedError;
+  String get brand;
+  String get plate;
 
-  @JsonKey(ignore: true)
-  $CarCopyWith<Car> get copyWith => throw _privateConstructorUsedError;
+  /// Create a copy of Car
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $CarCopyWith<Car> get copyWith =>
+      _$CarCopyWithImpl<Car>(this as Car, _$identity);
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is Car &&
+            (identical(other.brand, brand) || other.brand == brand) &&
+            (identical(other.plate, plate) || other.plate == plate));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, brand, plate);
+
+  @override
+  String toString() {
+    return 'Car(brand: $brand, plate: $plate)';
+  }
 }
 
 /// @nodoc
-abstract class $CarCopyWith<$Res> {
-  factory $CarCopyWith(Car value, $Res Function(Car) then) =
-      _$CarCopyWithImpl<$Res>;
+abstract mixin class $CarCopyWith<$Res> {
+  factory $CarCopyWith(Car value, $Res Function(Car) _then) = _$CarCopyWithImpl;
+  @useResult
   $Res call({String brand, String plate});
 }
 
 /// @nodoc
 class _$CarCopyWithImpl<$Res> implements $CarCopyWith<$Res> {
-  _$CarCopyWithImpl(this._value, this._then);
+  _$CarCopyWithImpl(this._self, this._then);
 
-  final Car _value;
-  // ignore: unused_field
+  final Car _self;
   final $Res Function(Car) _then;
 
+  /// Create a copy of Car
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? brand = freezed,
-    Object? plate = freezed,
+    Object? brand = null,
+    Object? plate = null,
   }) {
-    return _then(_value.copyWith(
-      brand: brand == freezed
-          ? _value.brand
+    return _then(_self.copyWith(
+      brand: null == brand
+          ? _self.brand
           : brand // ignore: cast_nullable_to_non_nullable
               as String,
-      plate: plate == freezed
-          ? _value.plate
+      plate: null == plate
+          ? _self.plate
           : plate // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
 }
 
-/// @nodoc
-abstract class _$$_CarCopyWith<$Res> implements $CarCopyWith<$Res> {
-  factory _$$_CarCopyWith(_$_Car value, $Res Function(_$_Car) then) =
-      __$$_CarCopyWithImpl<$Res>;
-  @override
-  $Res call({String brand, String plate});
-}
+/// Adds pattern-matching-related methods to [Car].
+extension CarPatterns on Car {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
 
-/// @nodoc
-class __$$_CarCopyWithImpl<$Res> extends _$CarCopyWithImpl<$Res>
-    implements _$$_CarCopyWith<$Res> {
-  __$$_CarCopyWithImpl(_$_Car _value, $Res Function(_$_Car) _then)
-      : super(_value, (v) => _then(v as _$_Car));
-
-  @override
-  _$_Car get _value => super._value as _$_Car;
-
-  @override
-  $Res call({
-    Object? brand = freezed,
-    Object? plate = freezed,
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_Car value)? $default, {
+    required TResult orElse(),
   }) {
-    return _then(_$_Car(
-      brand: brand == freezed
-          ? _value.brand
-          : brand // ignore: cast_nullable_to_non_nullable
-              as String,
-      plate: plate == freezed
-          ? _value.plate
-          : plate // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
+    final _that = this;
+    switch (_that) {
+      case _Car() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_Car value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _Car():
+        return $default(_that);
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_Car value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _Car() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(String brand, String plate)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _Car() when $default != null:
+        return $default(_that.brand, _that.plate);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(String brand, String plate) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _Car():
+        return $default(_that.brand, _that.plate);
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(String brand, String plate)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _Car() when $default != null:
+        return $default(_that.brand, _that.plate);
+      case _:
+        return null;
+    }
   }
 }
 
 /// @nodoc
 
-class _$_Car implements _Car {
-  _$_Car({required this.brand, required this.plate});
+class _Car implements Car {
+  _Car({required this.brand, required this.plate});
 
   @override
   final String brand;
   @override
   final String plate;
 
+  /// Create a copy of Car
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$CarCopyWith<_Car> get copyWith =>
+      __$CarCopyWithImpl<_Car>(this, _$identity);
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _Car &&
+            (identical(other.brand, brand) || other.brand == brand) &&
+            (identical(other.plate, plate) || other.plate == plate));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, brand, plate);
+
   @override
   String toString() {
     return 'Car(brand: $brand, plate: $plate)';
   }
+}
 
+/// @nodoc
+abstract mixin class _$CarCopyWith<$Res> implements $CarCopyWith<$Res> {
+  factory _$CarCopyWith(_Car value, $Res Function(_Car) _then) =
+      __$CarCopyWithImpl;
   @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$_Car &&
-            const DeepCollectionEquality().equals(other.brand, brand) &&
-            const DeepCollectionEquality().equals(other.plate, plate));
+  @useResult
+  $Res call({String brand, String plate});
+}
+
+/// @nodoc
+class __$CarCopyWithImpl<$Res> implements _$CarCopyWith<$Res> {
+  __$CarCopyWithImpl(this._self, this._then);
+
+  final _Car _self;
+  final $Res Function(_Car) _then;
+
+  /// Create a copy of Car
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? brand = null,
+    Object? plate = null,
+  }) {
+    return _then(_Car(
+      brand: null == brand
+          ? _self.brand
+          : brand // ignore: cast_nullable_to_non_nullable
+              as String,
+      plate: null == plate
+          ? _self.plate
+          : plate // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
   }
-
-  @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(brand),
-      const DeepCollectionEquality().hash(plate));
-
-  @JsonKey(ignore: true)
-  @override
-  _$$_CarCopyWith<_$_Car> get copyWith =>
-      __$$_CarCopyWithImpl<_$_Car>(this, _$identity);
 }
 
-abstract class _Car implements Car {
-  factory _Car({required final String brand, required final String plate}) =
-      _$_Car;
-
-  @override
-  String get brand => throw _privateConstructorUsedError;
-  @override
-  String get plate => throw _privateConstructorUsedError;
-  @override
-  @JsonKey(ignore: true)
-  _$$_CarCopyWith<_$_Car> get copyWith => throw _privateConstructorUsedError;
-}
+// dart format on

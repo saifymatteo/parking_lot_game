@@ -1,7 +1,5 @@
 # Parking Lot Game Challenge
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/93c33604-1ab4-40b2-9e3e-6339ea277ab8/deploy-status)](https://app.netlify.com/sites/parking-lot-game-saifymatteo/deploys)
-
 ![Parking Lot Game](https://raw.githubusercontent.com/saifymatteo/parking_lot_game/master/github/assets/main.jpg)
 
 A simple game for imaginary parking lot. Enter your desired parking size and click away to fill it up!
@@ -12,9 +10,32 @@ This game was originally a challenge to build a simple game by [Mihail Gaberov](
 
 ## Downloads
 
-You can try the [web version](https://parking-lot-game-saifymatteo.netlify.app/) of the game or just download it from [release tab](https://github.com/saifymatteo/parking_lot_game/releases/latest)
+You can try the [web version](https://parking.game.saifulmashuri.com/) of the game or just download it from [release tab](https://github.com/saifymatteo/parking_lot_game/releases/latest)
 
 ## Technology
 
-- Flutter: `3.27.2`
-- Dart: `3.6.1`
+- Flutter: `3.32.8`
+- Dart: `3.8.1`
+
+## Compiles
+
+### Web
+
+```bash
+flutter build web --release --wasm --verbose
+cp "./build/web" "./build/deploy/Parking-Lot-Game-v0.0.0-Web/" --recursive -f
+```
+
+### Android
+
+```bash
+flutter build apk --release --verbose
+cp "./build/app/outputs/flutter-apk/app-release.apk" "./build/deploy/Parking-Lot-Game-v0.0.0-Android.apk" --recursive -f
+```
+
+### Windows
+
+```bash
+flutter build windows --release --verbose
+cp "./build/windows/x64/runner/Release" "./build/deploy/Parking-Lot-Game-v0.0.0-Windows/" --recursive -f
+```

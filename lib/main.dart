@@ -5,7 +5,7 @@ import 'package:provider/provider.dart';
 
 import 'screens/screens.dart';
 
-void main()  {
+void main() {
   runApp(const App());
 }
 
