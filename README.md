@@ -31,6 +31,9 @@ Import-Module powershell-yaml
 ### Builds
 
 ```PowerShell
+# Create folder
+New-Item -Path ".\build\deploy" -ItemType Directory -Force
+
 # Get pubspec
 $content = Get-Content -Path "./pubspec.yaml" -Raw
 $pubspec = ConvertFrom-Yaml -Yaml $content
