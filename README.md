@@ -19,23 +19,35 @@ You can try the [web version](https://parking.game.saifulmashuri.com/) of the ga
 
 ## Compiles
 
-### Web
+### Pre-requisite
 
-```bash
+Use PowerShell with YAML module
+
+```PowerShell
+Install-Module -Name powershell-yaml
+Import-Module powershell-yaml
+```
+
+### Builds
+
+```PowerShell
+# Get pubspec
+$content = Get-Content -Path "./pubspec.yaml" -Raw
+$pubspec = ConvertFrom-Yaml -Yaml $content
+
+# Web
 flutter build web --release --wasm --verbose
-cp "./build/web" "./build/deploy/Parking-Lot-Game-v0.0.0-Web/" --recursive -f
-```
+Compress-Archive -Path ".\build\web\*" -DestinationPath ".\build\deploy\Parking-Lot-Game-v$($pubspec.version)-Web.zip" -Force
 
-### Android
-
-```bash
+# Android APK
 flutter build apk --release --verbose
-cp "./build/app/outputs/flutter-apk/app-release.apk" "./build/deploy/Parking-Lot-Game-v0.0.0-Android.apk" --recursive -f
-```
+Copy-Item -Path ".\build\app\outputs\flutter-apk\app-release.apk" -Destination ".\build\deploy\Parking-Lot-Game-v$($pubspec.version)-Android.apk" -Force -Recurse
 
-### Windows
+# Android App Bundle
+flutter build appbundle --release --verbose
+Copy-Item -Path ".\build\app\outputs\bundle\release\app-release.aab" -Destination ".\build\deploy\Parking-Lot-Game-v$($pubspec.version)-Android.aab" -Force -Recurse
 
-```bash
+# Windows
 flutter build windows --release --verbose
-cp "./build/windows/x64/runner/Release" "./build/deploy/Parking-Lot-Game-v0.0.0-Windows/" --recursive -f
+Compress-Archive -Path ".\build\windows\x64\runner\Release\*" -DestinationPath ".\build\deploy\Parking-Lot-Game-v$($pubspec.version)-Windows.zip" -Force
 ```
